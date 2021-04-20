@@ -1,0 +1,82 @@
+* {
+  cursor: none;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(236, 174, 229, 0.5);
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body button {
+  width: 100px;
+  height: 50px;
+  margin: auto;
+}
+
+body a,
+body figure {
+  margin: auto;
+}
+
+body img {
+  width: 300px;
+}
+
+.pointer {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1001;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.is-move .pointer {
+  opacity: 1;
+}
+
+.is-outside .pointer {
+  opacity: 0;
+}
+
+.stoker {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  z-index: 1000;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0.2s, background 0.2s;
+  transition: opacity 0.2s 0.2s, background 0.2s;
+}
+
+.is-move .stoker {
+  opacity: 0.5;
+}
+
+.is-outside .stoker {
+  opacity: 0;
+}
+
+.is-hover .stoker {
+  background: #00ffff;
+}
+/*# sourceMappingURL=style.css.map */

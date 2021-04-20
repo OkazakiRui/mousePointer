@@ -1,0 +1,67 @@
+* {
+  cursor: none;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba($color: #ecaee5, $alpha: 0.5);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  button {
+    width: 100px;
+    height: 50px;
+    margin: auto;
+  }
+  a,
+  figure {
+    margin: auto;
+  }
+  img {
+    width: 300px;
+  }
+}
+// pointerの設定
+.pointer {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.2s;
+  .is-move & {
+    opacity: 1;
+  }
+  .is-outside & {
+    opacity: 0;
+  }
+}
+
+.stoker {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.2s 0.2s, background 0.2s;
+  .is-move & {
+    opacity: 0.5;
+  }
+  .is-outside & {
+    opacity: 0;
+  }
+  .is-hover & {
+    background: #00ffff;
+  }
+}
