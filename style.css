@@ -21,15 +21,6 @@ body button {
   margin: auto;
 }
 
-body a,
-body figure {
-  margin: auto;
-}
-
-body img {
-  width: 300px;
-}
-
 .pointer,
 .stoker {
   pointer-events: none;

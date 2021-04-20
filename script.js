@@ -16,6 +16,11 @@ class Cursor {
       currentX: 0,
       currentY: 0,
     };
+
+    this.eventStatus = {
+      click: false,
+      hover: false,
+    };
   }
 
   init() {
@@ -36,6 +41,48 @@ class Cursor {
     });
     document.body.addEventListener("mouseenter", () => {
       this.wrap_el.classList.remove("is-outside");
+    });
+
+    // クリックした時
+    document.addEventListener("mousedown", (e) => {
+      this.eventStatus.click = true;
+    });
+    document.addEventListener("mouseup", (e) => {
+      this.eventStatus.click = false;
+    });
+
+    // observer作成
+    const observer = new MutationObserver(() => {
+      // 全てのaタグにイベントを付けている
+      let link = document.querySelectorAll("a");
+      for (const target of link) {
+        target.addEventListener("mouseenter", (e) => {
+          this.eventStatus.hover = true;
+          this.wrap_el.classList.add("is-hover");
+        });
+        target.addEventListener("mouseleave", (e) => {
+          this.eventStatus.hover = false;
+          this.wrap_el.classList.remove("is-hover");
+        });
+      }
+      // button
+      let btns = document.querySelectorAll("button");
+      for (const target of btns) {
+        target.addEventListener("mouseenter", (e) => {
+          this.eventStatus.hover = true;
+          this.wrap_el.classList.add("is-hover");
+        });
+        target.addEventListener("mouseleave", (e) => {
+          this.eventStatus.hover = false;
+          this.wrap_el.classList.remove("is-hover");
+        });
+      }
+    });
+
+    // observer開始
+    const body = document.body;
+    observer.observe(body, {
+      childList: true,
     });
   }
 
@@ -61,10 +108,23 @@ class Cursor {
           css: {
             x: this.position.currentX - this.stoker_el.clientWidth / 2,
             y: this.position.currentY - this.stoker_el.clientHeight / 2,
+            scale: this.scale(this.eventStatus),
           },
         });
       },
     });
+  }
+
+  scale(v) {
+    if (v.hover == true && v.click == false) {
+      return 1.5;
+    } else if (v.hover == false && v.click == true) {
+      return 0.7;
+    } else if (v.hover == true && v.click == true) {
+      return 0.7;
+    } else {
+      return 1;
+    }
   }
 }
 
