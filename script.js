@@ -16,10 +16,6 @@ class Cursor {
       currentX: 0,
       currentY: 0,
     };
-    this.eventStatus = {
-      click: false,
-      hover: false,
-    };
   }
 
   init() {

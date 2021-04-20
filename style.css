@@ -30,17 +30,21 @@ body img {
   width: 300px;
 }
 
-.pointer {
+.pointer,
+.stoker {
   pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.pointer {
   width: 10px;
   height: 10px;
   background: #000;
-  border-radius: 50%;
-  z-index: 1001;
-  opacity: 0;
+  z-index: 10001;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
@@ -49,34 +53,16 @@ body img {
   opacity: 1;
 }
 
-.is-outside .pointer {
-  opacity: 0;
-}
-
 .stoker {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   background: #ddd;
-  z-index: 1000;
-  opacity: 0;
+  z-index: 10000;
   -webkit-transition: opacity 0.2s 0.2s, background 0.2s;
   transition: opacity 0.2s 0.2s, background 0.2s;
 }
 
 .is-move .stoker {
   opacity: 0.5;
-}
-
-.is-outside .stoker {
-  opacity: 0;
-}
-
-.is-hover .stoker {
-  background: #00ffff;
 }
 /*# sourceMappingURL=style.css.map */

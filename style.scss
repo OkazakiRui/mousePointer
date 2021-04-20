@@ -22,46 +22,35 @@ body {
     width: 300px;
   }
 }
-// pointerの設定
-.pointer {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: #000;
-  border-radius: 50%;
-  z-index: 1001;
-  opacity: 0;
-  transition: opacity 0.2s;
-  .is-move & {
-    opacity: 1;
-  }
-  .is-outside & {
-    opacity: 0;
-  }
-}
 
+// pointerの設定
+.pointer,
 .stoker {
   pointer-events: none;
   position: fixed;
   top: 0;
   left: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+.pointer {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  z-index: 10001;
+  transition: opacity 0.2s;
+  .is-move & {
+    opacity: 1;
+  }
+}
+
+.stoker {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   background: #ddd;
-  z-index: 1000;
-  opacity: 0;
+  z-index: 10000;
   transition: opacity 0.2s 0.2s, background 0.2s;
   .is-move & {
     opacity: 0.5;
-  }
-  .is-outside & {
-    opacity: 0;
-  }
-  .is-hover & {
-    background: #00ffff;
   }
 }
