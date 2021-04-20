@@ -21,6 +21,10 @@ body button {
   margin: auto;
 }
 
+body a {
+  margin: auto;
+}
+
 .pointer,
 .stoker {
   pointer-events: none;
