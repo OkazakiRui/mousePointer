@@ -43,7 +43,7 @@ body img {
 .pointer {
   width: 10px;
   height: 10px;
-  background: #000;
+  background: white;
   z-index: 10001;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
@@ -60,7 +60,7 @@ body img {
 .stoker {
   width: 40px;
   height: 40px;
-  background: #ddd;
+  background: red;
   z-index: 10000;
   -webkit-transition: opacity 0.2s 0.2s, background 0.2s;
   transition: opacity 0.2s 0.2s, background 0.2s;

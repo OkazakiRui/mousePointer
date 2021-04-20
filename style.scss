@@ -36,7 +36,7 @@ body {
 .pointer {
   width: 10px;
   height: 10px;
-  background: #000;
+  background: white;
   z-index: 10001;
   transition: opacity 0.2s;
   .is-move & {
@@ -50,7 +50,7 @@ body {
 .stoker {
   width: 40px;
   height: 40px;
-  background: #ddd;
+  background: red;
   z-index: 10000;
   transition: opacity 0.2s 0.2s, background 0.2s;
   .is-move & {

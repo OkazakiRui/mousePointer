@@ -30,7 +30,7 @@ class Cursor {
       this.wrap_el.classList.add("is-move");
     });
 
-    // マウスが画面街に行った時
+    // マウスが画面外に行った時
     document.body.addEventListener("mouseleave", () => {
       this.wrap_el.classList.add("is-outside");
     });
@@ -48,10 +48,19 @@ class Cursor {
         this.position.currentY +=
           (this.position.mouseY - this.position.currentY) * 0.5;
 
+        // pointerの設定
         TweenMax.set(this.pointer_el, {
           css: {
-            x: this.position.currentX - 5,
-            y: this.position.currentY - 5,
+            x: this.position.currentX - this.pointer_el.clientWidth / 2,
+            y: this.position.currentY - this.pointer_el.clientHeight / 2,
+          },
+        });
+        // stokerの設定
+        // 0.3s掛けて向かう
+        TweenMax.to(this.stoker_el, 0.3, {
+          css: {
+            x: this.position.currentX - this.stoker_el.clientWidth / 2,
+            y: this.position.currentY - this.stoker_el.clientHeight / 2,
           },
         });
       },
