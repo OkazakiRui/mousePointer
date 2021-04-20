@@ -16,6 +16,10 @@ class Cursor {
       currentX: 0,
       currentY: 0,
     };
+    this.eventStatus = {
+      click: false,
+      hover: false,
+    };
   }
 
   init() {
@@ -23,10 +27,19 @@ class Cursor {
     this.tween();
   }
   attachEvent() {
+    // マウスが動いた時
     document.addEventListener("mousemove", (e) => {
       this.position.mouseX = e.clientX;
       this.position.mouseY = e.clientY;
       this.wrap_el.classList.add("is-move");
+    });
+
+    // マウスが画面街に行った時
+    document.body.addEventListener("mouseleave", () => {
+      this.wrap_el.classList.add("is-outside");
+    });
+    document.body.addEventListener("mouseenter", () => {
+      this.wrap_el.classList.remove("is-outside");
     });
   }
 

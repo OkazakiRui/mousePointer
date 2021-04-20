@@ -53,6 +53,10 @@ body img {
   opacity: 1;
 }
 
+.is-outside .pointer {
+  opacity: 0;
+}
+
 .stoker {
   width: 40px;
   height: 40px;
@@ -64,5 +68,9 @@ body img {
 
 .is-move .stoker {
   opacity: 0.5;
+}
+
+.is-outside .stoker {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

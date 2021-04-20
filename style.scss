@@ -42,6 +42,9 @@ body {
   .is-move & {
     opacity: 1;
   }
+  .is-outside & {
+    opacity: 0;
+  }
 }
 
 .stoker {
@@ -52,5 +55,8 @@ body {
   transition: opacity 0.2s 0.2s, background 0.2s;
   .is-move & {
     opacity: 0.5;
+  }
+  .is-outside & {
+    opacity: 0;
   }
 }
